@@ -17,8 +17,7 @@ public class Matematica {
 	}
 	
 	double somma(double um, double dois) {
-		double s = um + dois;
-		return s;
+		
 	}
 
 }
