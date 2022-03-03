@@ -32,5 +32,11 @@ public class MatematicaTest {
 		double total = m.soma("Numeros", 2, 3, 5, 6, 7, 123, 345, 69);
 		
 		System.out.println("Total = " + total);
+		
+		//Cálculo medias
+		System.out.println(m.media(10));
+		System.out.println(m.media(5, 3));
+		System.out.println(m.media("50", "30"));
+		System.out.println(m.media(2, 4, 6, 8, 10));
 	}	
 }
