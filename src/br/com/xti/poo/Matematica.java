@@ -17,8 +17,9 @@ public class Matematica {
 	}
 	
 	// também pode ser declarado assim (double[] numeros)
-	double soma(double ... numeros) {
+	double soma(String titulo, double ... numeros) {
 		
+		System.out.println(titulo);
 		double total = 0;
 		for(double n : numeros)
 			total += n;

@@ -29,7 +29,7 @@ public class MatematicaTest {
 		// também pode ser chamado assim
 		// double[] numeros = {2, 3, 5, 6, 7, 123, 345, 69};
 		// double total = m.soma(numeros);
-		double total = m.soma(2, 3, 5, 6, 7, 123, 345, 69);
+		double total = m.soma("Numeros", 2, 3, 5, 6, 7, 123, 345, 69);
 		
 		System.out.println("Total = " + total);
 	}	
