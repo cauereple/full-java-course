@@ -16,8 +16,14 @@ public class Matematica {
 			return dois;
 	}
 	
-	double somma(double um, double dois) {
+	// também pode ser declarado assim (double[] numeros)
+	double soma(double ... numeros) {
 		
+		double total = 0;
+		for(double n : numeros)
+			total += n;
+		
+		return total;
 	}
 
 }
