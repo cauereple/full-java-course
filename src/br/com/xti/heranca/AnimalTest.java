@@ -3,7 +3,13 @@ package br.com.xti.heranca;
 public class AnimalTest {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
+		Cachorro toto = new Cachorro();
+		toto.comida = "Carne";
+		toto.dormir();
+		
+		Galinha carijo = new Galinha();
+		carijo.dormir();
 
 	}
 
