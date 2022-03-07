@@ -1,6 +1,6 @@
 package br.com.xti.heranca;
 
-public class Animal {
+public abstract class Animal {
 	
 	double peso;
 	String comida;
