@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class DividePorZero {
 	
-	public static void dividir(Scanner s) {
+	public static void dividir(Scanner s) throws InputMismatchException, ArithmeticException {
 		System.out.print("Numero: ");
 		int a = s.nextInt();
 		System.out.print("Divisor: ");
@@ -37,9 +37,6 @@ public class DividePorZero {
 			
 		} while(continua);
 		
-		
-		
-
 	}
 }
 
