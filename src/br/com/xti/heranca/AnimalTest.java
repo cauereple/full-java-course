@@ -7,9 +7,15 @@ public class AnimalTest {
 	}
 
 	public static void main(String[] args) {
-
-		Animal generico = new Animal(0, null);
-		generico.fazerBarulho();
+		
+		//não podemos inicializar uma classe abstrata
+		//Animal generic = new Animal(0, null);
+		//generico.fazerBarulho();
+		
+		// devemos fazer isso para solucionar o problema
+		Animal generico = null;
+		barulho(generico);
+		
 		
 		Cachorro toto = new Cachorro();
 		toto.fazerBarulho();

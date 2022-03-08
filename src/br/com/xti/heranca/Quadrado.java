@@ -8,7 +8,9 @@ public class Quadrado implements AreaCalculavel{
 		this.lado = lado;
 	}
 	
-	public double CalculaArea() {
+	public double calculaArea() {
 		return lado * lado;
 	}
+
+	
 }
