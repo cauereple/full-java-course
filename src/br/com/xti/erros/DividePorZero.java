@@ -25,12 +25,9 @@ public class DividePorZero {
 				continua = false;
 				
 			}
-			catch(InputMismatchException e1) {
-				System.err.println("Números devem ser inteiros");
+			catch(InputMismatchException | ArithmeticException e1) {
+				System.err.println("Número Inválido");
 				s.nextLine(); //descarta a entrada errada e libera novamente para o usuário
-			}
-			catch(ArithmeticException e2) {
-				System.err.println("Divisor deve ser diferente de Zero");
 			}
 			
 		} while(continua);
