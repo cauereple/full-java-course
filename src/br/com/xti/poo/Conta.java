@@ -1,6 +1,6 @@
 package br.com.xti.poo;
 
-public class Conta {
+public class Conta implements java.io.Serializable {
 	
 	String cliente;
 	double saldo;
