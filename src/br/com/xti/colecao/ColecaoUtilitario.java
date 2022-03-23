@@ -1,4 +1,4 @@
-package br.com.xti.java;
+package br.com.xti.colecao;
 
 import java.util.ArrayList;
 import java.util.Arrays;
