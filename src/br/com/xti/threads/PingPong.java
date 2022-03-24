@@ -27,6 +27,7 @@ public class PingPong extends Thread {
 
 		new PingPong("ping", 1500).start();
 		new PingPong("PONG", 2000).start();
+		
 
 		System.out.println("Ver Thread");
 
