@@ -14,8 +14,16 @@ public class Aninhamento extends JFrame {
 		
 		botao = new JButton("Ok");
 		botao.addActionListener(new ListenerAninhado());
-		getContentPane().add(botao);
+		botao.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println("Classe Anônima executa " + botao.getText());
+				
+			}
+			
+		});
 		
+		getContentPane().add(botao);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(300, 300);
 		setVisible(true);
@@ -34,6 +42,9 @@ public class Aninhamento extends JFrame {
 	public static void main(String[] args) {
 		
 		Aninhamento janela = new Aninhamento();
+		
+		
+		Aninhamento.ListenerAninhado listener = janela.new ListenerAninhado();
 
 	}
 
