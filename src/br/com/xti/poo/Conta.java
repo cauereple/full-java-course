@@ -1,9 +1,10 @@
 package br.com.xti.poo;
 
+@SuppressWarnings("serial")
 public class Conta implements java.io.Serializable {
 	
-	String cliente;
-	double saldo;
+	public String cliente;
+	public double saldo;
 	
 	public Conta() {
 		
