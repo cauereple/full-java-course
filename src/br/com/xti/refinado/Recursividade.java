@@ -17,37 +17,40 @@ public class Recursividade {
 		}
 	}
 
-	/* potencia(3,4) = 3 * 3 * 3 * 3  */
+	/* potencia(3,4) = 3 * 3 * 3 * 3 */
 	public static int potencia(int x, int e) {
 		if (e == 0) {
+			return 1;
+		} else if (e == 1) {
 			return x;
 		} else {
-			return x * potencia(x, e-1);
+			return x * potencia(x, e - 1);
 		}
 	}
-	
+
 	public static void listar(Path path) {
-		if(Files.isRegularFile(path)) {
+		if (Files.isRegularFile(path)) {
 			System.out.println(path.toAbsolutePath());
 		} else {
 			String s = "\n" + path.toAbsolutePath();
 			System.err.println(s.toUpperCase());
-			
+
 			try (DirectoryStream<Path> stream = Files.newDirectoryStream(path)) {
-				
-				for(Path p : stream) {
+
+				for (Path p : stream) {
 					listar(p);
 				}
-			
-			} catch (Exception e) {}
+
+			} catch (Exception e) {
+			}
 		}
 	}
 
 	public static void main(String[] args) {
 
-		//System.out.println(soma(10));
-		//System.out.println(potencia(2, 10));
-		
+		System.out.println(soma(10));
+		System.out.println(potencia(2, 6));
+
 		listar(Paths.get("/Users/cauereple/eclipse-workspace/xti"));
 	}
 
