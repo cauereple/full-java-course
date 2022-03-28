@@ -30,7 +30,7 @@ public class Reflexao {
 			System.out.println(constructor);
 		}
 		
-		//Object o = classe.newInstance();
+		//tatObject o = classe.newInstance();
 		// Method md = classe.getMethod("deposita", double.class);
 		// md.invoke(o, 120);
 		
