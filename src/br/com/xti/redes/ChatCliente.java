@@ -13,30 +13,27 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 public class ChatCliente extends JFrame {
 
 	JTextField textoParaEnviar;
 	Socket socket;
 	PrintWriter escritor;
-
-	// Conexão com o Servidor
-	public void configurarRede() {
-		try {
-			socket = new Socket("127.0.0.1", 6000);
-			escritor = new PrintWriter(socket.getOutputStream());
-		} catch (Exception e) {
-		}
-	}
+	String nome;
 
 	// Interface gráfica
-	public ChatCliente() {
-		super("Chat");
+	public ChatCliente(String nome) {
+		
+		super("Chat:" + nome);
+		this.nome = nome;
 
 		Font fonte = new Font("Serif", Font.PLAIN, 26);
 		textoParaEnviar = new JTextField();
 		textoParaEnviar.setFont(fonte);
 		JButton botao = new JButton("Enviar");
 		botao.setFont(fonte);
+		botao.addActionListener(new EnviarListener());
+		
 		Container envio = new JPanel();
 		envio.setLayout(new BorderLayout());
 		envio.add(BorderLayout.CENTER, textoParaEnviar);
@@ -50,21 +47,30 @@ public class ChatCliente extends JFrame {
 		setVisible(true);
 
 	}
-
+	
 	public class EnviarListener implements ActionListener {
 
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			escritor.println(textoParaEnviar.getText());
+			escritor.println(nome + " : " + textoParaEnviar.getText());
 			escritor.flush();
 			textoParaEnviar.setText("");
 			textoParaEnviar.requestFocus();
 		}
 	}
 
+	// Conexão com o Servidor
+	public void configurarRede() {
+		try {
+			socket = new Socket("127.0.0.1", 6500);
+			escritor = new PrintWriter(socket.getOutputStream());
+		} catch (Exception e) {}
+	}
+
 	public static void main(String[] args) {
 
-		new ChatCliente();
+		new ChatCliente("Cauê");
+		new ChatCliente("Ricardo");
 
 	}
 
